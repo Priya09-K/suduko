@@ -1,0 +1,98 @@
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  color: #2d3436;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #2d3436;
+  text-shadow: 1px 1px 2px #dfe6e9;
+}
+
+/* Sudoku board layout */
+#board {
+  display: grid;
+  grid-template-columns: repeat(9, 50px);
+  grid-template-rows: repeat(9, 50px);
+  gap: 1px;
+  border: 3px solid #2d3436;
+  background-color: #2d3436;
+}
+
+/* Each Sudoku cell */
+#board input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Make 3x3 boxes stand out */
+#board input:nth-child(3n) {
+  border-right: 2px solid #2d3436;
+}
+#board input:nth-child(n+19):nth-child(-n+27),
+#board input:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid #2d3436;
+}
+
+/* Controls section */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Buttons and dropdown */
+button, select {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Button colors */
+button {
+  background-color: #0984e3;
+  color: white;
+}
+
+button:hover {
+  background-color: #74b9ff;
+}
+
+select {
+  background-color: #dfe6e9;
+  color: #2d3436;
+}
+
+/* Status message */
+.status {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2d3436;
+}
